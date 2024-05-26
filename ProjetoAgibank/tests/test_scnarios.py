@@ -1,5 +1,4 @@
 import time
-
 import pytest
 import conftest
 from selenium.webdriver.common.by import By
@@ -25,20 +24,31 @@ class TestScenarios:
         driver = conftest.driver
         elementspage = ElementsPage()
         elementspage.inscrever_newsletter("lucasmenezes@outlook.com")
-        driver.get_screenshot_as_file('Email_Register_' + date_time + '.png')
-        confirmacao = driver.find_element(By.ID, '#thank_you')
+        thanks = driver.find_element(By.XPATH, "//*[contains(text(), 'Confirme sua assinatura')]")
         time.sleep(1)
         driver.get_screenshot_as_file('Thanks_' + date_time + '.png')
-        assert confirmacao == "Confirme sua assinatura"
+        assert thanks.is_displayed()
 
     @pytest.mark.accessnews
     def test_access_news(self):
         today = datetime.now()
         date_time = today.strftime("%m-%d-%Y_%H-%M-%S")
         driver = conftest.driver
+        elementspage = ElementsPage()
+        elementspage.access_post()
+        time.sleep(1)
+        driver.get_screenshot_as_file('AccessPost_' + date_time + '.png')
+        post = driver.find_element(By.XPATH, "//span[contains(text(),'Cartão Virtual: o que é e como usar')]")
+        assert post.is_displayed()
 
     @pytest.mark.searchfield
     def test_search_field(self):
         today = datetime.now()
         date_time = today.strftime("%m-%d-%Y_%H-%M-%S")
         driver = conftest.driver
+        elementspage = ElementsPage()
+        elementspage.search_field("Conta Corrente")
+        time.sleep(2)
+        driver.get_screenshot_as_file('SearchField_' + date_time + '.png')
+        resultsearch = driver.find_element(By.XPATH, "//h1[@class='page-title ast-archive-title']")
+        assert resultsearch.is_displayed()

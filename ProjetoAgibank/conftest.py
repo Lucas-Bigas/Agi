@@ -8,7 +8,7 @@ def setup_teardown():
 
     global driver
     driver = webdriver.Chrome()
-    driver.implicitly_wait(30)
+    driver.implicitly_wait(2)
     driver.maximize_window()
     driver.get("https://blogdoagi.com.br/")
 
