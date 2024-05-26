@@ -7,10 +7,10 @@ driver: webdriver.Remote
 def setup_teardown():
 
     global driver
-    driver = webdriver.chrome()
-    driver.implicitly_wait(5)
+    driver = webdriver.Chrome()
+    driver.implicitly_wait(30)
     driver.maximize_window()
-    driver.get("")
+    driver.get("https://blogdoagi.com.br/")
 
     yield
 
