@@ -20,3 +20,8 @@ class ElementsPage:
     def search_field(self, search):
         self.driver.find_element(By.XPATH, "//*[@class='slide-search astra-search-icon']").click()
         self.driver.find_element(By.XPATH, "//*[@id='search-field']").send_keys(search, Keys.ENTER)
+        
+    def email_cancel(self,emailcancel):
+        self.driver.find_element(By.XPATH, "//li[@id='menu-item-5582']").click()
+        self.driver.find_element(By.XPATH, "//input[@id='subscribe-field-blog_subscription-3']").send_keys(emailcancel)
+        self.driver.find_element(By.XPATH, "//button[@type='submit']").click()
