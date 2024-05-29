@@ -14,6 +14,7 @@ VSCode - Acessar a pasta venv dentro do projeto, rodar o comando: pip venv\scrip
 **IDE Utilizada:**
 
 PyCharm
+
 VSCode
 
 **Os testes estão rodando nos ambientes:**
@@ -23,4 +24,5 @@ https://blogdoagi.com.br/
 **Comando para executar testes exemplos:**
 
 pytest
+
 pytest -v -m nome_da_classe (para rodar um unico cenário especifico)
