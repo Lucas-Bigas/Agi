@@ -7,6 +7,7 @@ Tudo o que será executado nesse projeto está sendo declarado test_scenarios.py
 **Importante rodar os testes no ambiente virtual, para isso:**
 
 Pycharm - Acessar da pasta do projeto rodar o comando: pip venv\scripts\Activate.ps1
+
 VSCode - Acessar a pasta venv dentro do projeto, rodar o comando: pip venv\scripts\Activate.ps1 retornar a pasta raiz do projeto
 
 
